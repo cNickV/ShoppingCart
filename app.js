@@ -28,7 +28,7 @@ const addCart = (e) => {
 const createCart = (array) => {
   cart.textContent = " ";
 
-  Object.values(cartObject).forEach((item) => {
+  array.forEach((item) => {
     const clone = template.content.firstElementChild.cloneNode(true);
     clone.querySelector(".lead").textContent = item.nameProduct;
     clone.querySelector(".badge").textContent = item.amount;
