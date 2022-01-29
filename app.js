@@ -6,8 +6,6 @@ const btns = document.querySelectorAll(".card .btn");
 const cartObject = [];
 
 const addCart = (e) => {
-  console.log(e.target.dataset.fruit);
-
   const product = {
     nameProduct: e.target.dataset.fruit,
     id: e.target.dataset.fruit,
@@ -19,17 +17,18 @@ const addCart = (e) => {
   console.log(index);
 
   if (index === -1) {
-    cartObject.push( product );
+    cartObject.push(product);
+  } else {
+    cartObject[index].amount++;
   }
-  
 
+  createCart(cartObject);
+};
 
-  
+const createCart = (array) => {
+  cart.textContent = " ";
 
-const createCart = () => {
   Object.values(cartObject).forEach((item) => {
-    cart.textContent = " ";
-
     const clone = template.content.firstElementChild.cloneNode(true);
     clone.querySelector(".lead").textContent = item.nameProduct;
     clone.querySelector(".badge").textContent = item.amount;
