@@ -3,7 +3,7 @@ const template = document.querySelector("#template");
 const fragment = document.createDocumentFragment();
 const btns = document.querySelectorAll(".card .btn");
 
-const cartObject = {};
+const cartObject = [];
 
 const addCart = (e) => {
   console.log(e.target.dataset.fruit);
@@ -14,14 +14,17 @@ const addCart = (e) => {
     amount: 1,
   };
 
-  if (cartObject.hasOwnProperty(product.nameProduct)) {
-    product.amount = cartObject[product.nameProduct].amount + 1;
+  const index = cartObject.findIndex((item) => item.id === product.id);
+
+  console.log(index);
+
+  if (index === -1) {
+    cartObject.push( product );
   }
+  
 
-  cartObject[product.nameProduct] = product;
 
-  createCart(product);
-};
+  
 
 const createCart = () => {
   Object.values(cartObject).forEach((item) => {
