@@ -23,6 +23,7 @@ const addCart = (e) => {
   }
 
   createCart(cartObject);
+  console.log(cartObject);
 };
 
 const createCart = (array) => {
