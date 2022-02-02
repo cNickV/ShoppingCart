@@ -55,6 +55,22 @@ const createCart = () => {
   });
 
   cart.appendChild(fragment);
+
+  createFooter();
+};
+
+const createFooter = () => {
+  footer.textContent = "";
+
+  const total = cartObject.reduce(
+    (acc, curr) => acc + curr.amount * curr.cost,
+    0
+  );
+
+  const clone = templateFooter.content.cloneNode(true);
+  clone.querySelector("span").textContent = total;
+
+  return footer.appendChild(clone);
 };
 
 const btnAdd = (e) => {
