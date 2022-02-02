@@ -65,11 +65,21 @@
 
     <section class="container mt-3">
       <ul class="list-group" id="cart">
-        <li class="list-group-item">
-          <span class="lead">Element</span>
-          <span class="badge bg-primary rounded-pill">counter</span>
+        <li class="list-group-item bg-secondary text-white">
+          <span class="badge bg-primary rounded-pill align-middle"
+            >counter</span
+          >
+          <span class="lead align-middle">Element</span>
         </li>
-        <li class="list-group-item"></li>
+        <li class="list-group-item d-flex justify-content-between">
+          <div>
+            <p class="lead mb-0">Subtotal <span>0</span></p>
+          </div>
+          <div>
+            <button class="brn btn-sm btn-danger"></button>
+            <button class="brn btn-sm btn-danger"></button>
+          </div>
+        </li>
       </ul>
     </section>
 
@@ -86,7 +96,13 @@
       </template>
     </footer>
 
-    <template id="template"> </template>
+    <template id="template">
+      <li class="list-group-item">
+        <span class="badge bg-primary rounded-pill align-middle">counter</span>
+        <span class="lead align-middle">Element</span>
+      </li>
+      <li class="list-group-item"></li>
+    </template>
 
     <script src="app.js"></script>
   </body>
