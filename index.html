@@ -64,23 +64,7 @@
     </main>
 
     <section class="container mt-3">
-      <ul class="list-group" id="cart">
-        <li class="list-group-item bg-secondary text-white">
-          <span class="badge bg-primary rounded-pill align-middle"
-            >counter</span
-          >
-          <span class="lead align-middle">Element</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between">
-          <div>
-            <p class="lead mb-0">Subtotal <span>0</span></p>
-          </div>
-          <div>
-            <button class="brn btn-sm btn-danger"></button>
-            <button class="brn btn-sm btn-danger"></button>
-          </div>
-        </li>
-      </ul>
+      <ul class="list-group" id="cart"></ul>
     </section>
 
     <footer id="footer-fruit" class="container mt-3">
@@ -97,11 +81,19 @@
     </footer>
 
     <template id="template">
-      <li class="list-group-item">
+      <li class="list-group-item bg-secondary text-white">
         <span class="badge bg-primary rounded-pill align-middle">counter</span>
         <span class="lead align-middle">Element</span>
       </li>
-      <li class="list-group-item"></li>
+      <li class="list-group-item d-flex justify-content-between">
+        <div>
+          <p class="lead mb-0">Subtotal <span>0</span></p>
+        </div>
+        <div>
+          <button class="brn btn-sm btn-danger">-</button>
+          <button class="brn btn-sm btn-success">+</button>
+        </div>
+      </li>
     </template>
 
     <script src="app.js"></script>
