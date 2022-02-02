@@ -70,7 +70,14 @@ const createFooter = () => {
   const clone = templateFooter.content.cloneNode(true);
   clone.querySelector("span").textContent = total;
 
-  return footer.appendChild(clone);
+  footer.appendChild(clone);
+
+  if (item.amount > 0) {
+    if (item.amount === 0) return;
+    return createFooter();
+  } else {
+    return createFooter();
+  }
 };
 
 const btnAdd = (e) => {
